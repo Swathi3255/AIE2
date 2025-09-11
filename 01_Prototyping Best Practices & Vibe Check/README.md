@@ -37,15 +37,23 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner. 
-    - Aspect Tested:
+    - Aspect Tested: approachability for a broader audience
+    The response conveyed the answer in a clear and accessible language, employing everyday analogies like dog etc. It presented the content in a well-structured format, utilizing numbered points, bold headings, and sub-sections to establish a clear hierarchy of ideas. The explanation emphasized fundamental concepts rather than delving into syntax or advanced theoretical details.
 2. Read the following paragraph and provide a concise summary of the key points…
-    - Aspect Tested:
+    - Aspect Tested: shortened yet meaningful, preserved the core message while improving readability
+    The response concentrated on the most essential details, refining the content by merging ideas and reducing unnecessary wording. The sentences were restructured to be more concise and impactful, ensuring brevity without sacrificing clarity or the inclusion of critical information.
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
-    - Aspect Tested:
+    - Aspect Tested: originality of the idea, intended sentiment, details in the request.
+    This response reflects creativity at its highest level, thoughtfully addressing the key elements of the question—such as the phrase “unexpected place.” It weaves these details into a relevant and meaningful narrative that feels both unique and engaging. By incorporating poetic language and expressive vocabulary.
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested:
+    - Aspect Tested: strong organization, coherence, and contextual alignment
+    The approach to the problem followed a clear and structured format. It began by restating the information provided, ensuring clarity and alignment on the given data and objectives. The target values were then explicitly defined, highlighting the focus of the solution. Following this, the response outlined a step-by-step methodology, detailing the logical progression required to achieve the target outcomes. Finally, the solution concluded with the derived answer, effectively tying back to the original problem statement.
 5. Rewrite the following paragraph in a professional, formal tone…
-    - Aspect Tested:
+    - Aspect Tested: Added contextual depth.
+    More elaborated sentences (expanded, fuller expression).
+    Professional vocabulary (formal, polished replacements).
+    Same sentiment preserved.
+    
 
 This "vibe check" now serves as a baseline, of sorts, to help understand what holes your application has.
 
@@ -58,7 +66,7 @@ This "vibe check" now serves as a baseline, of sorts, to help understand what ho
 #### ❓Question #1:
 
 What are some limitations of vibe checking as an evaluation tool?
-##### ✅ Answer:
+##### ✅ Answer: Vibe checking is too much dependent on the context, drawing biased conclusions. It can often over generalize the subtle differences if the context doesn't carry the strong sentiment for example, and can over simplify deep research as a casual thing. Different people might get different vibes for the same context.
 
 ### 🚧 Advanced Build (OPTIONAL):
 
