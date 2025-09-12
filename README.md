@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # AIE2
 =======
 # 🧑‍💻 What is [AI Engineering](https://maven.com/aimakerspace/ai-eng-bootcamp)?
@@ -52,4 +51,4 @@ Please to reach out with any questions or suggestions.
 
 Happy coding! 🚀🚀🚀
 
->>>>>>> c2c4d5489ee85809e8fc57cec8812c0a77108eb9
+
