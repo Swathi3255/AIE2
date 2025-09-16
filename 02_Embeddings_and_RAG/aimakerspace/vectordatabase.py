@@ -13,6 +13,11 @@ def cosine_similarity(vector_a: np.array, vector_b: np.array) -> float:
     return dot_product / (norm_a * norm_b)
 
 
+def euclidean_distance(vector_a: np.array, vector_b: np.array) -> float:
+    """Computes the Euclidean distance between two vectors."""
+    return float(np.linalg.norm(vector_a - vector_b))
+
+
 class VectorDatabase:
     def __init__(self, embedding_model: EmbeddingModel = None):
         self.vectors = defaultdict(np.array)
@@ -31,7 +36,12 @@ class VectorDatabase:
             (key, distance_measure(query_vector, vector))
             for key, vector in self.vectors.items()
         ]
-        return sorted(scores, key=lambda x: x[1], reverse=True)[:k]
+        # If the measure looks like a similarity, sort descending; if distance, ascending
+        # Heuristic: cosine in [-1,1] -> similarity; otherwise assume distance (e.g., euclidean >= 0)
+        if distance_measure is cosine_similarity:
+            return sorted(scores, key=lambda x: x[1], reverse=True)[:k]
+        else:
+            return sorted(scores, key=lambda x: x[1])[:k]
 
     def search_by_text(
         self,
