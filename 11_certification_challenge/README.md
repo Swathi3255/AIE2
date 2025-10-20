@@ -354,6 +354,43 @@ For questions, issues, or contributions:
 | **Validation Agent** | Ensures legal accuracy and proper citations |
 | **Supervisor Agent** | Coordinates all specialized agents |
 
+#### Multi-Agent System Flow Diagram
+
+```mermaid
+graph TD
+    A[🏢 Supervisor Agent<br/>Coordinates all teams] --> B[🔍 Research Team<br/>Policy Expertise]
+    A --> C[📝 Document Writing Team<br/>Response Generation]
+    
+    B --> B1[🗄️ RAG Tool<br/>Company knowledge base]
+    B --> B2[🌐 Tavily Search<br/>Latest information]
+    
+    C --> C1[✍️ Document Writer<br/>Initial drafting]
+    C --> C2[📋 Copy Editor<br/>Style compliance]
+    C --> C3[📚 Note Taker<br/>Citations & research]
+    C --> C4[❤️ Empathy Editor<br/>Customer understanding]
+    
+    %% Define relationships between tools and agents
+    B1 -.-> C1
+    B1 -.-> C3
+    B2 -.-> C1
+    B2 -.-> C3
+    
+    %% Styling
+    classDef supervisor fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef research fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef writing fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef tool fill:#e8f5e8,stroke:#1b5e20,stroke-width:1px
+    classDef subagent fill:#fce4ec,stroke:#c2185b,stroke-width:1px
+    
+    class A supervisor
+    class B research
+    class C writing
+    class B1,B2 tool
+    class C1,C2,C3,C4 subagent
+    
+    linkStyle 4,5,6,7 stroke:gray,stroke-width:1px,stroke-dasharray:5 5;
+```
+
 ### Advanced Features Roadmap
 - **Streamlit UI**: Interactive web interface for end users
 - **Real-time Updates**: Integration with legal databases for current law updates
