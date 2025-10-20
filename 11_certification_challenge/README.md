@@ -12,6 +12,7 @@ An advanced AI-powered RAG (Retrieval-Augmented Generation) system that helps te
 - **Renters** facing eviction, repair issues, or rental disputes
 - **Legal aid volunteers** assisting tenants with housing cases
 - **Tenant union organizers** educating members about their rights
+## Loom video : https://www.loom.com/share/7a1723c8eae04895aac027a65bbf9c35?sid=c74961cd-27da-436d-86ab-49f27f7e9a96
 
 ## 🛠️ Tech Stack
 
