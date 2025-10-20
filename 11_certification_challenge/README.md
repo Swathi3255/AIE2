@@ -4,20 +4,28 @@ An advanced AI-powered RAG (Retrieval-Augmented Generation) system that helps te
 
 ## 📋 Project Overview
 
-**Problem:** Tenants facing housing issues struggle to understand their legal rights and navigate complex housing laws that vary by location, jurisdiction, and specific circumstances.
+**Problem:** Tenants facing housing issues struggle to understand their legal rights and navigate complex housing laws that vary by location, jurisdiction, and specific circumstances. Legal aid services are often overwhelmed, and online resources are generic and not location-specific.
 
 **Solution:** A sophisticated RAG system with multi-agent reasoning capabilities, advanced retrieval techniques, and comprehensive evaluation metrics to provide accurate, contextual legal guidance.
 
-**Tech Stack:**
-- **LLM:** GPT-4o (OpenAI)
-- **Embeddings:** text-embedding-3-small (OpenAI)
-- **Vector DB:** Qdrant (in-memory)
-- **Orchestration:** LangChain & LangGraph
-- **Evaluation:** RAGAS (comprehensive metrics)
-- **Monitoring:** LangSmith
-- **Search:** Tavily Search API
-- **Research:** ArXiv integration
-- **Document Processing:** PyMuPDF, Unstructured
+### Target Audience
+- **Renters** facing eviction, repair issues, or rental disputes
+- **Legal aid volunteers** assisting tenants with housing cases
+- **Tenant union organizers** educating members about their rights
+
+## 🛠️ Tech Stack
+
+| Component | Choice | Justification |
+|-----------|---------|---------------|
+| **LLM** | GPT-4o | Best reasoning for legal nuance, cost-effective |
+| **Embeddings** | text-embedding-3-small | High quality, fast, cheap |
+| **Vector DB** | Qdrant (in-memory) | Advanced vector operations, production-ready |
+| **Orchestration** | LangChain & LangGraph | Rapid prototyping, excellent agent support |
+| **Evaluation** | RAGAS | Industry standard for RAG evaluation |
+| **Monitoring** | LangSmith | Free tier, excellent tracing |
+| **Search** | Tavily Search API | Real-time web search capabilities |
+| **Research** | ArXiv integration | Access to latest legal research |
+| **Document Processing** | PyMuPDF, Unstructured | Robust PDF and document processing |
 
 ## 🏗️ Project Structure
 
@@ -180,7 +188,7 @@ paper_fetcher = DynamicPaperFetcher(max_results=5)
 
 ## 📊 Data Sources
 
-The system processes multiple types of legal documents:
+The system processes multiple types of legal documents from various jurisdictions:
 
 ### PDF Documents (5 files)
 - **Fair Housing Act Summary.pdf**: Federal housing discrimination protections
@@ -194,6 +202,12 @@ The system processes multiple types of legal documents:
 - **california_civil_code.json**: CA civil code tenant rights
 - **fair_housing_act.json**: Federal fair housing protections
 - **austin_tenant_rights.json**: Austin-specific tenant rights
+
+### Data Collection Strategy
+- **Municipal codes:** San Francisco Rent Board, Austin City Code
+- **State laws:** California Civil Code, Texas Property Code
+- **Federal laws:** Fair Housing Act, HUD regulations
+- **Legal aid guides:** NOLO, Tenants Together, legal aid organizations
 
 ## 🧪 Testing & Evaluation
 
@@ -212,6 +226,12 @@ The system uses RAGAS (Retrieval-Augmented Generation Assessment) for comprehens
 
 ### Golden Dataset
 Located in `tests/golden_dataset/` and `data/golden_set/` for evaluation benchmarks.
+
+### Sample Test Questions
+- What is the maximum rent increase allowed in San Francisco?
+- How much notice does a landlord have to give for eviction in Austin?
+- What are my rights if my apartment has mold and the landlord won't fix it?
+- What protected classes are covered under the Fair Housing Act?
 
 ## 🔧 Configuration
 
@@ -240,8 +260,10 @@ Located in `tests/golden_dataset/` and `data/golden_set/` for evaluation benchma
 
 ### Intelligent Retrieval
 - **Vector Search**: Semantic similarity using OpenAI embeddings
-- **Hybrid Search**: Combines vector and keyword matching
-- **Query Expansion**: Generates related queries for better recall
+- **Hybrid Search**: Combines vector and keyword matching (BM25)
+- **Query Expansion**: Generates related queries to improve recall
+- **Multi-query Generation**: Breaks complex questions into sub-queries
+- **Re-ranking**: Uses cross-encoder models to reorder results
 
 ### Research Integration
 - **ArXiv Integration**: Access to latest legal research papers
@@ -261,6 +283,15 @@ The system is designed to achieve high performance across key metrics:
 - **Relevance**: Contextually appropriate responses
 - **Completeness**: Comprehensive coverage of legal topics
 - **Speed**: Efficient processing and retrieval
+
+### Performance Comparison Results
+Based on RAGAS evaluation across 7 retrieval strategies:
+
+**Top Performers:**
+- **Best Accuracy**: Parent Document Retrieval (+20% faithfulness improvement)
+- **Best Speed**: Multi-Query Retrieval
+- **Best Cost-Effectiveness**: Naive Retrieval (baseline)
+- **Best Balance**: BM25 (+17% faithfulness improvement)
 
 ## 🔒 Security & Privacy
 
@@ -306,7 +337,36 @@ For questions, issues, or contributions:
 ## 🔄 Version History
 
 - **v0.1.0**: Initial release with core RAG functionality
-- Current version includes comprehensive evaluation and multi-agent capabilities
+- Current version includes comprehensive evaluation and advanced retrieval capabilities
+
+---
+
+## 🚀 Future Scope & Roadmap
+
+### Multi-Agent System Architecture
+**Planned Implementation:** A sophisticated multi-agent system to handle complex legal queries through specialized agents:
+
+| Agent | Role |
+|-------|------|
+| **Research Agent** | Finds relevant laws and regulations |
+| **Empathy Agent** | Understands emotional context of tenant situations |
+| **Action Plan Agent** | Creates concrete, step-by-step guidance |
+| **Validation Agent** | Ensures legal accuracy and proper citations |
+| **Supervisor Agent** | Coordinates all specialized agents |
+
+### Advanced Features Roadmap
+- **Streamlit UI**: Interactive web interface for end users
+- **Real-time Updates**: Integration with legal databases for current law updates
+- **Multi-language Support**: Spanish and other language interfaces
+- **Mobile App**: Native mobile application for tenant access
+- **Integration APIs**: Connect with legal aid organizations' systems
+
+### Implementation Phases
+1. **Phase 1**: Core RAG system with basic retrieval
+2. **Phase 2**: Advanced retrieval techniques and evaluation
+3. **Phase 3**: Multi-agent system implementation
+4. **Phase 4**: Production deployment and user interface
+5. **Phase 5**: Advanced features and integrations
 
 ---
 
