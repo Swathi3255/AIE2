@@ -8,4 +8,5 @@ dependencies = [
     "jupyter>=1.1.1",
     "logfire>=3.12.0",
     "openai-agents>=0.0.7",
+    "matplotlib",
 ]
