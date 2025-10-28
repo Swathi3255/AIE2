@@ -6,8 +6,9 @@
 
 ## <h1 align="center" id="heading">Session 12: OpenAI Agents SDK</h1>
 
-| 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
-|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
+| 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
+|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
+| [Session 12: OpenAI Agents SDK](https://www.notion.so/Session-12-OpenAI-Agents-SDK-26acd547af3d8045899cd5ca3bfd80d4) |[Recording!](https://us02web.zoom.us/rec/share/6ACkCnX23miV3utzM4OYUTQ5Cr5BkFt1X8OIxSe4IYKu8ek4HMqtmFXEn9n20VnZ.UWUAcSZtBt2GU6S-) (5akb&x5k) | [Session 12 Slides](https://www.canva.com/design/DAG1_Z56ngY/fMiCFC6s3UVHY8T0mF2ZoQ/edit?utm_content=DAG1_Z56ngY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 12 Assignment: Agents SDK](https://forms.gle/8V7mHzPUnxxYN9c17) | [AIE8 Feedback10/16](https://forms.gle/4u2M2ikLFdm3sAKB8)
 
 In today's assignment, we'll be fine-tuning embeddings!
 
