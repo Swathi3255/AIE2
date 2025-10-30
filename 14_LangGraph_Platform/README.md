@@ -39,7 +39,27 @@ Run the repository and complete the following:
 Compare the `agent` and `agent_helpful` assistants defined in `langgraph.json`. Where does the helpfulness evaluator fit in the graph, and under what condition should execution route back to the agent vs. terminate?
 
 ##### ✅ Answer:
-_(enter answer here)_
+ 
+The `agent` assistant uses the `simple_agent` graph, which is a basic tool-using agent with a simple loop:
+- **Flow**: `agent` node → if tool calls exist → `action` node → back to `agent` → else → END
+- **Purpose**: Executes tools when needed but terminates immediately after the model produces a final response (no tool calls)
+
+The `agent_helpful` assistant uses the `agent_with_helpfulness` graph, which adds a helpfulness evaluation layer:
+- **Flow**: `agent` node → if tool calls exist → `action` node → back to `agent` → else → `helpfulness` node → decision
+- **Purpose**: After the agent produces a response (no tool calls), it evaluates whether the response is helpful before terminating
+
+**Where the helpfulness evaluator fits:**
+The helpfulness evaluator (`helpfulness` node) is inserted in the execution path **after** the agent produces a final response but **before** termination. Specifically:
+1. After the `agent` node responds without tool calls, routing goes to `helpfulness` instead of END
+2. The `helpfulness` node uses a separate LLM call to evaluate if the response is helpful (Y/N)
+3. The decision is stored as a message with content `"HELPFULNESS:Y"` or `"HELPFULNESS:N"`
+
+**Routing conditions:**
+- **Route back to agent** (`continue`): When helpfulness evaluation returns "N" (not helpful). The agent gets another chance to improve its response. This creates a feedback loop where unhelpful responses trigger re-generation.
+- **Terminate** (`end`): When helpfulness evaluation returns "Y" (helpful), execution goes to END, completing the conversation.
+- **Safety termination**: If the message count exceeds 10, the helpfulness node short-circuits with `"HELPFULNESS:END"` to prevent infinite loops, and execution terminates regardless of helpfulness.
+
+This architecture enables the agent to self-correct when its initial response isn't helpful, improving quality through iteration.
 
 #### 🏗️ Activity #1 Debugging A Graph
 
@@ -50,7 +70,30 @@ Select the `agent_with_helpfulness` and set one or more interrupts (at least one
 What are your thoughts on when you would use a Before interrupt vs. an After interrupt?
 
 ##### ✅ Answer:
-_(enter answer here)_
+
+**Before Interrupt:**
+Use a "Before" interrupt when you want to:
+- **Inspect/modify input parameters** before a node executes: Check or sanitize the state being passed to a node, modify the agent's instructions, or add context before processing.
+- **Validate prerequisites**: Ensure all required data is present or conditions are met before expensive operations (e.g., checking if tools are available before calling the model).
+- **Debug input state**: Examine what data the node will receive, useful for understanding why a node might fail or produce unexpected results.
+- **Intercept and modify**: Change the state or add metadata before the node runs (e.g., injecting system prompts, adding user context, or filtering messages).
+
+Example: Setting a "Before" interrupt on the `agent` node lets you see the messages being sent to the model and potentially modify them before the model call.
+
+**After Interrupt:**
+Use an "After" interrupt when you want to:
+- **Inspect/modify outputs** after a node completes: Review the node's results, modify responses, or add annotations before they're passed to the next node.
+- **Validate quality**: Check if the output meets certain criteria (similar to the helpfulness check) and decide whether to proceed, retry, or terminate.
+- **Debug output state**: Understand what a node produced, which is crucial for debugging failures or unexpected behavior downstream.
+- **Post-processing**: Add logging, store results, or transform the output format before state transitions to the next node.
+
+Example: Setting an "After" interrupt on the `helpfulness` node lets you see the helpfulness evaluation result and potentially override the decision or add logging.
+
+**Key Difference:**
+- **Before**: Affects what goes **into** the node (input validation, state modification)
+- **After**: Affects what comes **out** of the node (output validation, result modification)
+
+Both are valuable for debugging, but After interrupts are particularly useful for understanding what each step produces and for implementing quality gates in production systems.
 
 
 
