@@ -72,7 +72,7 @@ uv run python -m app
 ```
 
 ```bash
-# Test the A2A Serer
+# Test the A2A Server
 uv run python app/test_client.py
 ```
 
@@ -80,13 +80,78 @@ uv run python app/test_client.py
 
 Build a LangGraph Graph to "use" your application.
 
-Do this by creating a Simple Agent that can make API calls to the 🤖Agent Node above through the A2A protocol. 
+Do this by creating a Simple Agent that can make API calls to the 🤖Agent Node above through the A2A protocol.
+
+**Implementation**: A simple LangGraph agent has been created in `app/activity1_client.py` that uses the A2A protocol to communicate with your server.
+
+**To run Activity #1:**
+
+1. **Start the A2A server** (in one terminal):
+   ```bash
+   uv run python -m app
+   ```
+   The server will start on `http://localhost:10000`
+
+2. **Run the Activity #1 client** (in another terminal):
+   
+   **Option A: Automated test with sample queries**
+   ```bash
+   uv run python app/activity1_client.py
+   ```
+   
+   **Option B: Interactive mode (type your own queries)**
+   ```bash
+   uv run python app/activity1_interactive.py
+   ```
+   
+   **Option C: Debug response structure (troubleshooting)**
+   ```bash
+   uv run python app/debug_response.py
+   ```
+
+**What the client does:**
+- Fetches the agent card from your server using `A2ACardResolver`
+- Creates a LangGraph with a single node that calls the A2A server
+- Sends queries via A2A protocol and extracts responses
+- Handles multi-turn conversations with task_id/context_id
+- Automatically retries when tasks are in terminal state
+
+**Key features:**
+- ✅ Clean, simplified code (< 200 lines per file)
+- ✅ Proper error handling and terminal state recovery
+- ✅ Multi-turn conversation support
+- ✅ Response extraction from A2A artifacts
+- ✅ Debug script for troubleshooting
+
+This demonstrates how to use LangGraph to create agents that communicate via the A2A protocol! 
 
 ### ❓ Question #1:
 
 What are the core components of an `AgentCard`?
 
 ##### ✅ Answer:
+
+An `AgentCard` is a standardized metadata document that describes an AI agent's capabilities, making it discoverable and interoperable through the A2A protocol. The core components include:
+
+1. **Basic Identity**: `name`, `description`, `url`, and `version` - These provide fundamental information about the agent's identity and location.
+
+2. **Content Modes**: `default_input_modes` and `default_output_modes` - These specify what content types the agent can handle (e.g., 'text', 'text/plain', images, etc.).
+
+3. **Capabilities**: A `capabilities` object that describes what the agent can do, such as:
+   - `streaming`: Whether the agent supports streaming responses
+   - `push_notifications`: Whether the agent can send push notifications
+   - Other protocol-level features
+
+4. **Skills**: An array of `AgentSkill` objects, where each skill includes:
+   - `id`: Unique identifier for the skill
+   - `name`: Human-readable name
+   - `description`: What the skill does
+   - `tags`: Categorization keywords
+   - `examples`: Example queries that demonstrate the skill
+
+5. **Extended Card Support**: Optional support for authenticated extended cards that provide additional capabilities not exposed in the public card.
+
+The AgentCard serves as a "business card" for agents, allowing them to discover each other's capabilities and communicate effectively without prior knowledge of each other's implementation details.
 
 <br />
 
@@ -95,6 +160,20 @@ What are the core components of an `AgentCard`?
 Why is A2A (and other such protocols) important in your own words?
 
 ##### ✅ Answer:
+
+A2A (Agent-to-Agent) protocol and similar standardization protocols are crucial for the future of AI agent ecosystems for several key reasons:
+
+1. **Interoperability**: Just like HTTP enabled different web browsers and servers to communicate, A2A allows agents built with different frameworks (LangGraph, LangChain, custom implementations) to seamlessly communicate with each other. This breaks down vendor lock-in and enables agents to work together regardless of their underlying technology.
+
+2. **Discovery & Composition**: Agents can discover each other's capabilities through AgentCards, allowing for dynamic composition of multi-agent systems. An agent can find and leverage specialized agents without needing to know their implementation details beforehand.
+
+3. **Standardized Quality Assurance**: The A2A protocol includes built-in evaluation mechanisms (like the helpfulness loop we implemented) that ensure agents maintain quality standards. This creates a self-regulating ecosystem where agents evaluate and improve their responses.
+
+4. **Scalability & Distribution**: As AI systems become more complex, we'll need distributed architectures where specialized agents handle specific domains. A2A provides the foundation for building such distributed agent networks where agents can collaborate, delegate tasks, and share knowledge.
+
+5. **Future-Proofing**: By adopting standardized protocols early, we're building infrastructure that will support the evolution of AI systems. As new capabilities emerge, they can be integrated into the protocol, ensuring backward and forward compatibility.
+
+In essence, A2A is to AI agents what HTTP/TCP-IP was to the internet - a foundational protocol that enables a decentralized, interoperable ecosystem where innovation can flourish across different implementations and vendors.
 
 <br /><br />
 
