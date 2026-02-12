@@ -1,0 +1,8 @@
+Strategy,Success Rate,Avg Latency (s),Context Recall,Context Precision,Faithfulness,Answer Relevancy,Avg Response Length,Est. Cost ($),Errors
+1 Naive,100.00%,2.14,1.000,0.000,0.513,0.748,574,0.0849,0
+2 BM25,100.00%,2.33,0.988,0.000,0.600,0.790,720,0.1025,0
+3 MultiQuery,0.00%,0.00,0.000,0.000,0.000,0.000,nan,0.0000,20
+4 ParentDoc,100.00%,2.36,1.000,0.000,0.615,0.800,629,0.0914,0
+5 Compression,50.00%,2.73,1.000,0.000,0.200,0.805,522,0.0807,10
+6 Ensemble,100.00%,2.43,0.983,0.000,0.480,0.745,666,0.0954,0
+7 Semantic,100.00%,2.33,1.000,0.000,0.542,0.813,678,0.0964,0

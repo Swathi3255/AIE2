@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Aid Navigator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .input-group {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.1em;
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            resize: vertical;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .samples {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .samples h3 {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .sample-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            color: #333;
+        }
+        .sample-btn:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 30px;
+            display: none;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .response {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f0f8ff;
+            border-left: 5px solid #667eea;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .response h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .response p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .error {
+            background: #ffe6e6;
+            border-left-color: #ff4444;
+        }
+        .status {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .status.online {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.offline {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 Legal Aid Navigator</h1>
+        <p class="subtitle">Get answers about tenant rights and housing law</p>
+        
+        <div class="status" id="status">Checking connection...</div>
+        
+        <div class="samples">
+            <h3>📋 Try these sample questions:</h3>
+            <button class="sample-btn" onclick="setSampleQuestion(this)">
+                What are my rights if my landlord won't fix mold in my apartment?
+            </button>
+            <button class="sample-btn" onclick="setSampleQuestion(this)">
+                Can my landlord raise my rent by 12% this year in California?
+            </button>
+            <button class="sample-btn" onclick="setSampleQuestion(this)">
+                How long does my landlord have to return my security deposit?
+            </button>
+            <button class="sample-btn" onclick="setSampleQuestion(this)">
+                Can my landlord evict me without giving notice?
+            </button>
+        </div>
+        
+        <div class="input-group">
+            <label for="question">Or ask your own question:</label>
+            <textarea 
+                id="question" 
+                rows="4" 
+                placeholder="Type your question about tenant rights, evictions, rent increases, repairs, etc."
+            ></textarea>
+        </div>
+        
+        <button onclick="askQuestion()" id="askBtn">Ask Question</button>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Thinking... This may take a few seconds</p>
+        </div>
+        
+        <div class="response" id="response">
+            <h3>📝 Answer:</h3>
+            <p id="answer"></p>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5000/ask';
+        const HEALTH_URL = 'http://localhost:5000/health';
+        
+        // Check API status on load
+        async function checkStatus() {
+            const statusDiv = document.getElementById('status');
+            try {
+                const response = await fetch(HEALTH_URL);
+                if (response.ok) {
+                    statusDiv.textContent = '✅ Connected to API';
+                    statusDiv.className = 'status online';
+                } else {
+                    statusDiv.textContent = '⚠️ API responding but unhealthy';
+                    statusDiv.className = 'status offline';
+                }
+            } catch (error) {
+                statusDiv.textContent = '❌ API not running - Start the server first!';
+                statusDiv.className = 'status offline';
+            }
+        }
+        
+        // Set sample question
+        function setSampleQuestion(button) {
+            document.getElementById('question').value = button.textContent.trim();
+        }
+        
+        // Ask question
+        async function askQuestion() {
+            const question = document.getElementById('question').value.trim();
+            const responseDiv = document.getElementById('response');
+            const loadingDiv = document.getElementById('loading');
+            const answerP = document.getElementById('answer');
+            const askBtn = document.getElementById('askBtn');
+            
+            if (!question) {
+                alert('Please enter a question');
+                return;
+            }
+            
+            // Show loading
+            loadingDiv.style.display = 'block';
+            responseDiv.style.display = 'none';
+            responseDiv.classList.remove('error');
+            askBtn.disabled = true;
+            askBtn.textContent = 'Thinking...';
+            
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: question })
+                });
+                
+                const data = await response.json();
+                
+                // Hide loading
+                loadingDiv.style.display = 'none';
+                askBtn.disabled = false;
+                askBtn.textContent = 'Ask Question';
+                
+                if (response.ok) {
+                    answerP.textContent = data.answer;
+                    responseDiv.style.display = 'block';
+                } else {
+                    answerP.textContent = 'Error: ' + (data.error || 'Unknown error occurred');
+                    responseDiv.classList.add('error');
+                    responseDiv.style.display = 'block';
+                }
+            } catch (error) {
+                loadingDiv.style.display = 'none';
+                askBtn.disabled = false;
+                askBtn.textContent = 'Ask Question';
+                answerP.textContent = '❌ Could not connect to API. Make sure the Flask server is running in your notebook!';
+                responseDiv.classList.add('error');
+                responseDiv.style.display = 'block';
+            }
+        }
+        
+        // Allow Enter to submit (Shift+Enter for new line)
+        document.getElementById('question').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                askQuestion();
+            }
+        });
+        
+        // Check status on page load
+        checkStatus();
+        
+        // Recheck status every 10 seconds
+        setInterval(checkStatus, 10000);
+    </script>
+</body>
+</html>

@@ -5,9 +5,9 @@
 
 ## <h1 align="center" id="heading">Session 10: Open DeepResearch with LangGraph</h1>
 
-| 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
-|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-
+| 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
+|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
+| [Session 10: Advanced Agents and Reasoning](https://www.notion.so/Session-10-Advanced-Agents-and-Reasoning-26acd547af3d8015af4ef45f133f9b44) |[Recording!](https://us02web.zoom.us/rec/share/f_VDsIu8wZMNFxF21bYxSifg2f2gwjcjBetxLn2T53KnB0qqvtV0bBnygiuM9Mpt.GJa9VFAfcDygLMMf) (?sm431NF) | [Session 10 Slides](https://www.canva.com/design/DAG1VvdyXcY/6IaRuJXhbh18KuBkBGEMiw/edit?utm_content=DAG1VvdyXcY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 10 Assignment: Open Deep Research](https://forms.gle/wtbBrrDryEZQLTyP8) | [AIE8 Feedback 10/9](https://forms.gle/5d84qR3bYrQ4dhdx6)
 
 ### Steps to Run:
 

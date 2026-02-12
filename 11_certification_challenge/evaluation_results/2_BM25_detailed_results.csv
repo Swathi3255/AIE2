@@ -1,0 +1,94 @@
+question_id,question,answer,latency,tokens,success
+Q01,My landlord in Los Angeles raised my rent by 12% this year. Is that legal under California law?,"Under California law, rent increases are generally limited by the Tenant Protection Act of 2019 (AB 1482). This law restricts annual rent increases to no more than 5% plus the regional Consumer Price Index (CPI), with a maximum total increase of 10% per year. Since your rent was increased by 12%, this exceeds the statewide cap of 10%. 
+
+However, local rent control ordinances in cities like Los Angeles may impose even stricter limits. It is advisable to check if Los Angeles has specific rent control laws that could restrict your rent increase further.
+
+Based on the information provided, a 12% increase appears to be above the legal limit under California law and local ordinances, unless there are specific exceptions or different terms in your lease. You may want to consult a local tenants' rights organization or legal professional for personalized advice.",2.7901699542999268,205.4,True
+Q02,I live in a 10-year-old apartment in San Diego. Does the statewide rent cap apply to me?,"Based on the information provided, the statewide rent cap under the Tenant Protection Act of 2019 (AB 1482) applies to most rental properties in California that are over 15 years old. Since your apartment is 10 years old, it is generally not covered by this statewide rent cap. 
+
+However, local rent control ordinances in cities like San Diego may have their own rules and protections. You should check if San Diego has specific rent control laws that apply to your building. 
+
+In summary:
+- The statewide rent cap does **not** typically apply to your 10-year-old apartment.
+- You may have additional protections if San Diego has local rent control ordinances.
+
+It would be a good idea to verify with local housing authorities or a tenants' rights organization in San Diego for the most accurate information regarding local laws.",3.835920810699463,200.20000000000002,True
+Q03,My landlord hasn’t fixed a mold problem for 6 weeks. What are my legal options in California?,"In California, if your landlord hasn't fixed a mold problem for 6 weeks, you have several legal options:
+
+1. **Notify Your Landlord in Writing:** Ensure you have documented your request for repairs. Under California law, landlords are generally required to make necessary repairs within 30 days, especially for issues affecting habitability like mold.
+
+2. **Request a Habitability Inspection:** You can contact local health or building authorities to inspect the property and issue a notice to your landlord to address the mold problem.
+
+3. **Withhold Rent or Repair and Deduct:** If the landlord ignores your written request, you may have the option to withhold rent (by placing it in a separate account) or repair the issue yourself and deduct the cost from your rent. However, these remedies must be used carefully to avoid eviction risks.
+
+4. **File a Complaint with Local Agencies:** You can report the issue to local health departments or code enforcement agencies, which can compel the landlord to address the mold.
+
+5. **Seek Legal Assistance:** If the landlord continues to neglect repairs, you may consider consulting a tenant rights organization or an attorney. You might also have grounds to pursue a rent reduction, damages, or even terminate your lease if the mold makes the unit uninhabitable.
+
+6. **Potential for Legal Action:** If necessary, you can file a lawsuit for breach of the implied warranty of habitability, which requires landlords to maintain rental units in a habitable condition.
+
+Remember, acting promptly and keeping detailed records of all communications and inspections is crucial. If you're unsure about the best course of action, contacting a local legal aid organization can provide guidance tailored to your situation.",5.322649717330933,378.3,True
+Q04,Can my landlord in Oakland evict me just because my one-year lease ended?,"In Oakland, your landlord cannot evict you simply because your one-year lease has ended. Under California law, and specifically under AB 1482, most tenants are protected from no-cause evictions, meaning your landlord must have a valid reason (""just cause"") to evict you, such as nonpayment of rent, violation of lease terms, creating a nuisance, or the owner moving in (with proper notice and relocation assistance in some cases). 
+
+Since your lease ended and there is no indication of any violation or other just cause, your landlord cannot legally evict you just because the lease expired. However, it's always good to review your specific lease agreement and local ordinances, and consider consulting a legal professional for personalized advice.",2.1174075603485107,167.70000000000002,True
+Q05,How long does my landlord have to return my security deposit after I move out in California?,"In California, your landlord is required to return your security deposit within 21 days after you move out. If there are any deductions, your landlord must also provide you with a written explanation and copies of receipts for repairs over $125.",0.9583127498626709,74.10000000000001,True
+Q06,My landlord in Houston shut off my electricity because I was 5 days late on rent. Is that allowed in Texas?,"In Texas, it is illegal for your landlord to shut off your electricity as a way to evict you or because you are late on rent. The context indicates that self-help evictions, such as changing locks or shutting off utilities, are illegal in Texas. Therefore, your landlord's action of shutting off your electricity is not allowed. If this has happened, you may want to seek legal assistance or contact local authorities to address the situation.",2.118953227996826,123.5,True
+Q07,I’ve lived in my Dallas apartment for 8 months. How much notice does my landlord need to give me for a rent increase?,"In Dallas, if you are on a month-to-month lease, your landlord generally must give you at least 30 days' written notice before increasing your rent.",0.8793003559112549,61.1,True
+Q08,"My AC broke in July in Austin,  and my landlord hasn’t fixed it in 10 days. What can I do under Texas law?","Under Texas law, if your landlord has not fixed your broken AC in 10 days, you have several options:
+
+1. **Provide Written Notice:** Ensure you have given your landlord a written notice requesting the repair. Keep a copy for your records.
+
+2. **Allow a Reasonable Time for Repairs:** Texas law generally considers 7 days as a reasonable time for urgent repairs, such as a broken AC during hot weather. Since it has been 10 days, this period has likely passed.
+
+3. **Repair and Deduct:** You may have the right to arrange for the repair yourself and deduct the cost from your rent, but this should be done carefully to avoid eviction risks. Typically, you should notify your landlord in writing of your intent to repair and deduct, and keep receipts.
+
+4. **Withhold Rent:** You might be able to withhold rent until the repair is made, but this is risky and should be done cautiously, ideally after consulting a legal professional or local tenant rights organization.
+
+5. **Terminate the Lease:** If the issue makes the unit uninhabitable, you may have grounds to terminate the lease.
+
+6. **Legal Action:** You can also contact local housing authorities or a legal aid organization for assistance. They can advise you on further steps, including filing a complaint or seeking a court order for the repair.
+
+It’s important to document all communications and keep records of your notices and any expenses incurred. If you are unsure about the best course of action, consulting a local tenant rights organization or an attorney familiar with Texas landlord-tenant law is advisable.",4.848961353302002,369.2,True
+Q09,"Can a landlord in Texas charge a $3, 000 security deposit for a $1, 200/month apartment?","In Texas, there is no state law that caps the amount a landlord can charge for a security deposit. The Texas Property Code states that landlords must return the deposit within 30 days after you move out, provided you give a forwarding address, and deductions can only be made for actual damages beyond normal wear and tear. 
+
+Therefore, a landlord in Texas can charge a security deposit of $3,000 for a $1,200/month apartment, although it is generally considered good practice for deposits to be reasonable and not excessively high. Keep in mind that the deposit amount should be justified by the landlord and is subject to the terms of your lease agreement.",1.7817409038543701,165.1,True
+Q10,I received a 3-day notice to vacate in Fort Worth for late rent. What happens if I don’t leave?,"If you do not leave after receiving a 3-day notice to vacate in Fort Worth for late rent, your landlord can file an eviction lawsuit (known as forcible entry and detainer) against you. This legal process allows the landlord to seek a court order to remove you from the property. You have the right to appear in court and present your side. Ignoring the eviction process can result in a court judgment against you, and law enforcement may then carry out the eviction to remove you from the premises. It is important to respond to any legal notices and consider seeking legal assistance to understand your options.",2.0326106548309326,162.5,True
+Q11,My landlord refused to rent to me because I have two young children. Is that legal anywhere in the U.S.?,"In the United States, under the federal Fair Housing Act, it is illegal for a landlord to refuse to rent to someone based on familial status, which includes having children under 18. This means that refusing to rent to you because you have two young children is generally considered illegal discrimination in most parts of the U.S. 
+
+However, there are some exceptions in certain types of housing, such as some senior or age-restricted communities, but these are specific and usually clearly designated. 
+
+If you believe you have been discriminated against because of your children, you can file a complaint with the U.S. Department of Housing and Urban Development (HUD) or seek legal assistance.",2.247288942337036,171.6,True
+Q12,I use a wheelchair and need to install grab bars in my bathroom. Can my landlord say no?,"Under federal law, specifically the Fair Housing Act, your landlord cannot say no to reasonable modifications needed for your disability, such as installing grab bars in your bathroom. They are required to allow these modifications at your expense and must make reasonable accommodations in their rules or policies. Therefore, your landlord cannot legally refuse your request to install grab bars due to your use of a wheelchair.",1.562772512435913,109.2,True
+Q13,Is it legal for a rental ad to say 'perfect for young professionals'?,"It is generally not advisable for a rental ad to specify ""perfect for young professionals,"" as such language can be considered discriminatory under the Fair Housing Act. The Act prohibits advertising that indicates a preference or limitation based on protected classes, including sex, age, or familial status. While ""young professionals"" is not explicitly a protected class, using such language can be interpreted as a preference that may lead to discrimination claims. To ensure compliance with fair housing laws, it is best to avoid language that suggests a preference for or against certain groups of people.",2.23870587348938,139.1,True
+Q14,"My landlord says emotional support animals aren’t allowed,  but I have a doctor’s note. What are my rights?","If you have a doctor’s note indicating that your animal is an emotional support animal (ESA), your landlord generally cannot refuse to allow it based solely on the animal’s status as an ESA. Under federal law, specifically the Fair Housing Act, landlords are required to make reasonable accommodations for tenants with disabilities, which includes allowing ESAs even if the property has a no-pets policy.
+
+Your rights include:
+- Providing your landlord with documentation from a licensed healthcare professional confirming your need for the emotional support animal.
+- Requesting a reasonable accommodation for your ESA, which the landlord must consider unless they can demonstrate a legitimate, non-discriminatory reason for denial.
+
+However, landlords can still deny an ESA if:
+- The animal poses a direct threat to the health or safety of others.
+- The animal causes substantial property damage.
+- The animal’s presence would impose an undue financial or administrative burden on the landlord.
+
+It’s advisable to communicate in writing with your landlord, providing the doctor’s note and requesting the accommodation. If your landlord refuses without valid reason, you may have grounds to challenge their decision based on fair housing laws.
+
+If you need further assistance, consider consulting a tenant rights organization or legal professional familiar with housing laws in your area.",2.9990077018737793,296.40000000000003,True
+Q15,I’m on Section 8 in Chicago. My landlord says the unit failed inspection—how long do they have to fix it?,"In Chicago, if your Section 8 unit fails inspection, the landlord is typically required to fix the issues within 30 days. If the problems are life-threatening, such as gas leaks, they must be addressed within 24 hours.",0.9172098636627197,72.8,True
+Q16,I got a pay raise. How soon do I need to report it to my Public Housing Authority?,"You need to report any income changes, including a pay raise, to your Public Housing Authority (PHA) within 10 days.",0.8117077350616455,48.1,True
+Q17,Can my PHA evict me without a hearing if I’m late on my portion of the rent?,"Based on the information provided, your PHA cannot evict you without a hearing if you are late on your portion of the rent. You have the right to a formal grievance hearing before your PHA makes major decisions affecting your tenancy, including eviction.",1.5703539848327637,76.7,True
+Q18,Which state offers stronger rent control: California or Texas?,"California offers stronger rent control protections compared to Texas. In California, there is a statewide rent cap limiting rent increases to 5% plus the regional Consumer Price Index (CPI), with a maximum total increase of 10% per year. Additionally, many cities like Los Angeles, San Francisco, and Oakland have their own local rent control ordinances that may provide even stronger protections. California law also regulates security deposits and eviction procedures, providing tenants with significant rights.
+
+In contrast, Texas does not have any rent control laws, allowing landlords to increase rent by any amount with proper notice. While Texas law provides some protections regarding security deposits and prohibits retaliatory or discriminatory rent increases, it does not impose limits on how much rent can be increased.
+
+Therefore, California's rent control laws are more comprehensive and offer stronger protections for tenants than those in Texas.",2.836568832397461,195.0,True
+Q19,"If I live in a HUD-subsidized apartment in California,  which rules apply—federal","If you live in a HUD-subsidized apartment in California, federal rules apply. Specifically, tenants in public housing, Section 8, or HUD-subsidized properties have rights and responsibilities under federal regulations. These include the right to a safe, decent, and sanitary home that meets HUD’s Housing Quality Standards, and rent calculations based on income. Additionally, federal law provides protections against discrimination and retaliation, and tenants can file complaints with HUD if they believe their rights have been violated. 
+
+However, it's also important to check for any local ordinances or state laws that may offer additional protections beyond federal regulations.",2.0800158977508545,140.4,True
+Q20,"My landlord in San Antonio won’t fix a broken heater in January. Would the rules be different if I lived in San Francisco?  State,  or local?","The rules regarding a landlord’s obligation to fix a broken heater can vary depending on the state and local laws. 
+
+In San Antonio, Texas, landlord-tenant laws generally require landlords to maintain the rental property in a habitable condition, which includes providing heat during the winter months. If your landlord refuses to fix the heater in January, you may have legal rights to request repairs or seek remedies under Texas law.
+
+In San Francisco, California, there are often stronger tenant protections. California law, along with local ordinances in San Francisco, typically requires landlords to maintain rental units in a habitable condition, including providing adequate heating. San Francisco has specific local regulations that may impose stricter standards and faster repair obligations, especially during winter.
+
+So, yes, the rules can be different. California and San Francisco generally have more comprehensive tenant protections and stricter repair obligations compared to Texas and San Antonio. It’s advisable to check the specific local ordinances and state laws or consult a local tenant rights organization for precise guidance.",2.6512181758880615,253.5,True
